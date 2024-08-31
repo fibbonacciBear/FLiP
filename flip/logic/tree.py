@@ -23,7 +23,7 @@ class Path(Text):
   def __init__(self, text):
     Text.__init__(self, text)
     if not wff.match(text): 
-      raise SyntaxError, 'path %s does not match [01]*$' % text
+      raise SyntaxError(f'path {text} does not match [01]*$')
 
   def pform(self):
     return "Path('%s')" % self.text

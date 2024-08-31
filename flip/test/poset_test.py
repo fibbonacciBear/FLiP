@@ -15,7 +15,7 @@ ex42 = \
    (lt(a,a), trans, 3,4),
    (F, irref,5)]
 
-print check_proof(ex42)
+print(check_proof(ex42))
 
 ex43 = \
  [(Text('Kaye ex. 4.3, p. 40'), comment),
@@ -27,7 +27,7 @@ ex43 = \
   (F, irref, 5),
   (nlt(c,a), raa, 4,6)]
 
-print check_proof(ex43)
+print(check_proof(ex43))
 
 ex44 = \
  [(Text('Kaye ex. 4.4, p. 41'), comment),
@@ -37,7 +37,7 @@ ex44 = \
   (F,irref,3),
   (nlt(b,a),raa, 2,4)]
 
-print check_proof(ex44)
+print(check_proof(ex44))
 
 ex46 = \
 [(Text('Kaye ex. 4.6, p. 41'), comment),
@@ -48,4 +48,4 @@ ex46 = \
  (F,contra,4,2),
  (nlt(a,c),raa,3,5)]
 
-print check_proof(ex46)
+print(check_proof(ex46))

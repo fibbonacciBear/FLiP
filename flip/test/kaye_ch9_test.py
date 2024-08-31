@@ -11,7 +11,7 @@ ex910 = \
     (Let(a,Equal(a,f(w))), let),
     (Equal(a,f(w)),Ee,6,7,7)]
 
-print check_proof(ex910)
+print(check_proof(ex910))
 
 
 ex912 = \
@@ -29,7 +29,7 @@ ex912 = \
     (Not(Not(E(x, Not(P(x))))), raa, 2,10),
     (E(x, Not(P(x))), ne, 11)]
 
-print check_proof(ex912)
+print(check_proof(ex912))
 
 ex914 = \
   [(Text('Valid E-elim, Kaye ex. 9.14, Ax.~P(x) |- ~Ex.P(x)'), comment),
@@ -41,7 +41,7 @@ ex914 = \
     (F, Ee, 2,3,5),
     (Not(E(x, P(x))), raa, 2,6)]
 
-print check_proof(ex914)
+print(check_proof(ex914))
 
 ex916 = \
   [(Text('Kaye ex. 9.16: Ex.Ey.(R(x) & R(y) & ~(x = y)), Ax.Ay.(P(x) & P(y) -> (x = y)) |- Ex.(R(x) & ~P(x))'), comment),
@@ -76,7 +76,7 @@ ex916 = \
     (Not(Not(E(x, And(R(x),Not(P(x)))))), raa, 3,28),
     (E(x, And(R(x),Not(P(x)))), ne, 29)]
 
-print check_proof(ex916)
+print(check_proof(ex916))
 
 ex917 = \
   [(Text('Kaye ex. 9.17: Ex.(P(x) & ~R(x)), Ax.Ay.(P(x) & P(y) -> (x = y) |- Ax.(R(x) -> ~P(x))'), comment),
@@ -99,12 +99,11 @@ ex917 = \
     (Impl(R(x),Not(P(x))), impli, 4,16),
     (A(x, Impl(R(x),Not(P(x)))), Ai, 3,17)]
 
-print check_proof(ex917)
+print(check_proof(ex917))
 
-print 
+print()
 
 pp()
 
-print
-
+print()
 ptree()

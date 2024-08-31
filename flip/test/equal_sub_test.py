@@ -6,7 +6,7 @@ ex917 = \
    (Equal(a,x), given),
    (Not(R(x)),sub,2,1)]
 
-print check_proof(ex917)
+print(check_proof(ex917))
 
 ex918 = \
   [(Text('From example 9.18'), comment),
@@ -14,7 +14,7 @@ ex918 = \
    (Equal(f(a),a), given),
    (S(a),sub,2,1)]
 
-print check_proof(ex918)
+print(check_proof(ex918))
 
 no_premise_match = \
   [(Text('Premise does not match equation'), comment),
@@ -22,7 +22,7 @@ no_premise_match = \
    (Equal(f(a),a), given),
    (S(a),sub,2,1)]
 
-print check_proof(no_premise_match)
+print(check_proof(no_premise_match))
 
 no_conclusion_match = \
   [(Text('Conclusion does not match equation'), comment),
@@ -30,7 +30,7 @@ no_conclusion_match = \
    (Equal(f(a),a), given),
    (S(b),sub,2,1)]
 
-print check_proof(no_conclusion_match)
+print(check_proof(no_conclusion_match))
 
 equation_reversed = \
   [(Text('Equation reversed'), comment),
@@ -38,7 +38,7 @@ equation_reversed = \
    (Equal(a,f(a)), given),
    (S(a),sub,2,1)]
 
-print check_proof(equation_reversed)
+print(check_proof(equation_reversed))
 
 premises_reversed = \
   [(Text('Premises reversed'), comment),
@@ -46,7 +46,7 @@ premises_reversed = \
    (Equal(f(a),a), given),
    (S(a),sub,1,2)]
 
-print check_proof(premises_reversed)
+print(check_proof(premises_reversed))
 
 no_eq_premise_number = \
   [(Text('No equation premise number'), comment),
@@ -54,7 +54,7 @@ no_eq_premise_number = \
    (Equal(f(a),a), given),
    (S(a),sub,1)]
 
-print check_proof(no_eq_premise_number)
+print(check_proof(no_eq_premise_number))
 
 no_s1_premise_number = \
   [(Text('No premise formula number'), comment),
@@ -62,7 +62,7 @@ no_s1_premise_number = \
    (Equal(f(a),a), given),
    (S(a),sub,2)]
 
-print check_proof(no_s1_premise_number)
+print(check_proof(no_s1_premise_number))
 
 one_occur_ok = \
   [(Text('Valid substitution into one of multiple occurences'),comment),
@@ -70,7 +70,7 @@ one_occur_ok = \
    (And(P(x,y),Q(x,y)), given),
    (And(P(x,y),Q(z,y)), sub, 1,2)]
 
-print check_proof(one_occur_ok)
+print(check_proof(one_occur_ok))
 
 mult_occur_ok = \
   [(Text('Valid substitution into all of multiple occurences'),comment),
@@ -78,7 +78,7 @@ mult_occur_ok = \
    (And(P(x,y),Q(x,y)), given),
    (And(P(z,y),Q(z,y)), sub, 1,2)]
 
-print check_proof(mult_occur_ok)
+print(check_proof(mult_occur_ok))
 
 mult_occur_err = \
   [(Text('Erroneous substitution into one of multiple occurences, other occurence ok'),comment),
@@ -86,7 +86,7 @@ mult_occur_err = \
    (And(P(x,y),Q(x,y)), given),
    (And(P(z,y),Q(u,y)), sub, 1,2)]
 
-print check_proof(mult_occur_err)
+print(check_proof(mult_occur_err))
 
 mult_occur_err_1 = \
   [(Text('Erroneous substitution into one of multiple occurences, other occurence ok, reverse order'),comment),
@@ -94,4 +94,4 @@ mult_occur_err_1 = \
    (And(P(x,y),Q(x,y)), given),
    (And(P(u,y),Q(z,y)), sub, 1,2)]
 
-print check_proof(mult_occur_err_1)
+print(check_proof(mult_occur_err_1))

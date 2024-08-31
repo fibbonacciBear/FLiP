@@ -7,7 +7,7 @@ p111Ae = \
    (Impl(P(t),Not(Q(t))), Ae, 2),
    (Not(Q(t)), imple, 3,1)]
 
-print check_proof(p111Ae)
+print(check_proof(p111Ae))
 
 p111AeAi = \
   [(Text('H&R p. 111 Ae, Ai: Ax.(P(x) -> Q(x)), Ax.P(x) |- Ax.Q(x)'), comment),
@@ -19,7 +19,7 @@ p111AeAi = \
     (Q(x), imple, 4,5),
     (A(x, Q(x)), Ai, 3,6)]
 
-print check_proof(p111AeAi)
+print(check_proof(p111AeAi))
 
 p114AeEi = \
   [(Text('Ax.P(x) -> Ex.P(x) using Ae, Ei from H&R p. 114'), comment),
@@ -27,7 +27,7 @@ p114AeEi = \
    (P(x), Ae, 1),
    (E(x,P(x)), Ei, 2)]
 
-print check_proof(p114AeEi)
+print(check_proof(p114AeEi))
 
 p114AeEiEe = \
   [(Text('H&R p. 114, valid Ae,Ei,Ee: Ax.(P(x) -> Q(x)), Ex.P(x) |- Ex.Q(x)'), comment),
@@ -39,7 +39,7 @@ p114AeEiEe = \
     (E(x, Q(x)), Ei, 5),
     (E(x, Q(x)), Ee, 2,3,6)]
 
-print check_proof(p114AeEiEe)
+print(check_proof(p114AeEiEe))
 
 p114AeEeEi_err = \
   [(Text('H&R p. 114, erroneous Ae,Ee,Ei: Ax.(P(x) -> Q(x)), Ex.P(x) |- Ex.Q(x)'), comment),
@@ -50,7 +50,7 @@ p114AeEeEi_err = \
     (Q(x), imple, 4,3),
     (Q(x), Ee, 2,3,5)]
 
-print check_proof(p114AeEeEi_err)
+print(check_proof(p114AeEeEi_err))
 
 hr119 = \
   [(Text('H&R p.119: ~Ax.P(x) |- Ex.~P(x)'), comment),
@@ -65,7 +65,7 @@ hr119 = \
     (F, contra, 8,1),
     (E(x, Not(P(x))), pbc, 2,9)]
 
-print check_proof(hr119)
+print(check_proof(hr119))
 
 p121EiEeOre = \
   [(Text('H&R p. 121: Ex.p v Ex.q |- Ex.(p v q)'), comment),
@@ -82,7 +82,7 @@ p121EiEeOre = \
     (E(x, Or(p,q)), Ee, 7,8,10),
     (E(x, Or(p,q)), ore, 1,2,6,7,11)]
 
-print check_proof(p121EiEeOre)
+print(check_proof(p121EiEeOre))
 
 p121EiOreEe = \
   [(Text('H&R p. 121: Ex.(p v q) |- Ex.p v Ex.q'), comment),
@@ -97,7 +97,7 @@ p121EiOreEe = \
     (Or(E(x, p),E(x, q)), ore, 2,3,5,6,8),
     (Or(E(x, p),E(x, q)), Ee, 1,2,9)]
 
-print check_proof(p121EiOreEe)
+print(check_proof(p121EiOreEe))
 
 p122EiEe = \
   [(Text('H&R p. 122: Ex.Ey.p |- Ey.Ex.p'), comment),
@@ -109,4 +109,4 @@ p122EiEe = \
     (E(y, E(x, p)), Ee, 2,3,5),
     (E(y, E(x, p)), Ee, 1,2,6)]
 
-print check_proof(p122EiEe)
+print(check_proof(p122EiEe))

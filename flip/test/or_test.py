@@ -5,14 +5,14 @@ oil_ok = \
    (Not(a),given),
    (Or(Not(b),Not(a)), oil, 1)]
 
-print check_proof(oil_ok)
+print(check_proof(oil_ok))
 
 oir_ok = \
   [(Text("Or-Introduction Right"), comment),
    (Not(a),given),
    (Or(Not(a),Not(b)), oir, 1)]
 
-print check_proof(oir_ok)
+print(check_proof(oir_ok))
 
 oel_ok = \
   [(Text("Or-Elimination Left"),comment),
@@ -20,7 +20,7 @@ oel_ok = \
    (Not(Not(b)), given),
    (Not(a), oel, 1, 2)]
 
-print check_proof(oel_ok)
+print(check_proof(oel_ok))
 
 oer_ok = \
   [(Text("Or-Elimination Right"),comment),
@@ -28,21 +28,21 @@ oer_ok = \
    (Not(Not(b)), given),
    (Not(a), oer, 1, 2)]
 
-print check_proof(oer_ok)
+print(check_proof(oer_ok))
 
 oil_err0 = \
   [(Text("Or-Introduction Left, argument doesn't match premise"), comment),
    (Not(a),given),
    (Or(Not(c),Not(b)), oil, 1)]
 
-print check_proof(oil_err0)
+print(check_proof(oil_err0))
 
 oir_err0 = \
   [(Text("Or-Introduction Right, conclusion is not Or"), comment),
    (Not(b),given),
    (And(Not(a),Not(b)), oir, 1)]
 
-print check_proof(oir_err0)
+print(check_proof(oir_err0))
 
 oer_err1 = \
   [(Text("Or-Elimination Right, argument doesn't match"),comment),
@@ -50,7 +50,7 @@ oer_err1 = \
    (Not(Not(c)), given),
    (Not(a), oer, 1, 2)]
 
-print check_proof(oer_err1)
+print(check_proof(oer_err1))
 
 oel_err1 = \
   [(Text("Or-Elimination Left, argument doesn't match"),comment),
@@ -58,7 +58,7 @@ oel_err1 = \
    (Not(Not(a)), given),
    (Not(b), oel, 1, 2)]
 
-print check_proof(oel_err1)
+print(check_proof(oel_err1))
 
 
 oel_err2 = \
@@ -67,7 +67,7 @@ oel_err2 = \
    (Not(Not(a)), given),
    (Not(b), oel, 1, 2)]
 
-print check_proof(oel_err2)
+print(check_proof(oel_err2))
 
 oel_err3 = \
   [(Text("Or-Elimination Left, premise index is for comment"),comment),
@@ -75,5 +75,5 @@ oel_err3 = \
    (Not(Not(a)), given),
    (Not(b), oel, 0, 2)]
 
-print check_proof(oel_err3)
+print(check_proof(oel_err3))
 

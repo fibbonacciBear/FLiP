@@ -15,7 +15,8 @@ ex64 = \
    (F, contra, 8, 6),        # 9
    (Not(And(a,Not(b))), raa, 1, 9)]  # 10
 
-print check_proof(ex64)  # 'print' prints True or False after all proof steps
+print(check_proof(ex64))  # 'print( prints True or False after all proof steps
+
 
 ex65 = \
   [(Text('Example 6.5  |- ((a & ~b) v ~a) v b'), comment),
@@ -37,7 +38,8 @@ ex65 = \
     (Not(Not(Or(Or(And(a,Not(b)),Not(a)),b))), raa, 1,15),
     (Or(Or(And(a,Not(b)),Not(a)),b), ne, 16)]
 
-print check_proof(ex65)
+print(check_proof(ex65)
+)
 
 ex67 = \
   [(Text('Example 6.7  erroneous a v b |- b, undischarged assumption'), comment),
@@ -49,7 +51,8 @@ ex67 = \
     (Not(Not(b)), raa, 2,5),
     (b, ne, 6)]
 
-print check_proof(ex67)
+print(check_proof(ex67)
+)
 
 ex67a = \
   [(Text("Example 6.7a  dead end a v b |- b, can't discharge assumption"), comment),
@@ -61,7 +64,8 @@ ex67a = \
     (Not(Not(a)), raa, 3,5),
     (Text('...'), comment)]
 
-print check_proof(ex67a)
+print(check_proof(ex67a)
+)
 
 ex68 = \
   [(Text('Example 6.8  erroneous a v b |- b, confusion about brackets'), comment),
@@ -72,7 +76,8 @@ ex68 = \
     (Not(Not(a)), raa, 2, 4),
     (a, ne, 5)]
 
-print check_proof(ex68)
+print(check_proof(ex68)
+)
 
 ex69 = \
   [(Text('Example 6.9  a & b |- ~(~a v ~b)'), comment),
@@ -87,4 +92,5 @@ ex69 = \
     (F, contra, 3,8),
     (Not(Or(Not(a),Not(b))), raa, 4,9)]
 
-print check_proof(ex69)
+print(check_proof(ex69)
+)

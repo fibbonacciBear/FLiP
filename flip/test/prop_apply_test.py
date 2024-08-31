@@ -19,7 +19,7 @@ def ex64_apply():
 
 ex64_apply()
 pstate()
-print
+print()
 
 def ex64_apply_aerxl():
   check_proof()
@@ -31,7 +31,7 @@ def ex64_apply_aerxl():
 
 ex64_apply_aerxl()
 pstate()
-print
+print()
 
 # from prop_constructive_test
 
@@ -47,7 +47,7 @@ def ex51a():
   prapply(ore, 1,3,3,4,6)
 
 ex51a()
-print
+print()
 
 def ex51a_noformula():
   check_proof()
@@ -61,7 +61,7 @@ def ex51a_noformula():
   prapply(ore, 1,3,3,4,6)
 
 ex51a_noformula()
-print
+print()
 
 # error checks from prop_ore_scope_test
 
@@ -77,7 +77,7 @@ def ex51a_scramble_subproofs():
   prapply(ore, 1,3,6,4,3)
 
 ex51a_scramble_subproofs()
-print
+print()
 
 def failed_ore():
   clear() # calls check_proof()
@@ -88,7 +88,7 @@ def failed_ore():
   prapply(ore, 1,2,2,3,3)
 
 failed_ore()
-print
+print()
 
 def invalid_subproofs():
   clear()
@@ -99,7 +99,7 @@ def invalid_subproofs():
   prapply(ore, 1,2,2,3,2)
 
 invalid_subproofs()
-print
+print()
 
 def ore_scope_invalid():
   clear()
@@ -113,7 +113,7 @@ def ore_scope_invalid():
   prapply(ore, 1,2,2,4,6)
 
 ore_scope_invalid()
-print
+print()
 
 def ore_scope_invalid1():
   clear()
@@ -128,7 +128,7 @@ def ore_scope_invalid1():
   prapply(ore, 1,2,2,4,6)
 
 ore_scope_invalid1()
-print
+print()
 
 # compare to ex111 in prop_derived_test, the formulas in impli steps are big
 

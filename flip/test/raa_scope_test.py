@@ -13,7 +13,7 @@ ex43 = \
   (F, irref, 5),           # 6
   (nlt(c,a), raa, 4,6)]    # 7
 
-print check_proof(ex43)
+print(check_proof(ex43))
 
 dup_ok = \
  [(Text('Kaye ex. 4.3, p. 40, duplicate subproofs, cite premises in correct scope'), comment),
@@ -29,7 +29,7 @@ dup_ok = \
   (F, irref, 9),           # 10 cites 9, same subproof
   (nlt(c,a), raa, 8,10)]   # 11 explicit premises
 
-print check_proof(dup_ok)
+print(check_proof(dup_ok))
 
 dup_err = \
  [(Text('Kaye ex. 4.3, p. 40, duplicate subproofs, cite premises in wrong scope'), comment),
@@ -45,5 +45,5 @@ dup_err = \
   (F, irref, 5),           # 10 cites 5, wrong subproof
   (nlt(c,a), raa, 4,6)]    # 11 explicit premises, wrong subproof
 
-print check_proof(dup_err)
+print(check_proof(dup_err))
 

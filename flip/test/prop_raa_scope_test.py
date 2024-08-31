@@ -9,7 +9,7 @@ ok = \
    (F, contra, 1,2),
    (Not(Not(a)), raa, 2,3)]
 
-print check_proof(ok)
+print(check_proof(ok))
 
 assume_raa_invalid_2 = \
   [(Text('Invalid |- ~~a with subproof too deeply nested'), comment),
@@ -19,7 +19,7 @@ assume_raa_invalid_2 = \
     (Not(Not(a)), raa, 2,3),  # valid
     (Not(Not(a)), raa, 2,3)]  # invalid, now subproof too deeply nested.
 
-print check_proof(assume_raa_invalid_2)
+print(check_proof(assume_raa_invalid_2))
 
 ex67_err = \
   [(Text('From example 6.7 invalid a v b |- b, subproof too deeply nested'), comment),
@@ -33,14 +33,14 @@ ex67_err = \
     (b, ne, 7)]
 
 
-print check_proof(ex67_err)
+print(check_proof(ex67_err))
 
 assume_raa_derive_not_f = \
   [(Text('Valid |- ~F using assumption, raa'), comment),
     (F, assume),
     (Not(F), raa, 1,1)]
 
-print check_proof(assume_raa_derive_not_f)
+print(check_proof(assume_raa_derive_not_f))
 
 assume_raa_derive_valid = \
   [(Text('Valid |- ~(a & F) using assumption, raa'), comment),
@@ -48,7 +48,7 @@ assume_raa_derive_valid = \
     (F, ael, 1),
     (Not(And(a,F)), raa, 1,2)]
 
-print check_proof(assume_raa_derive_valid)
+print(check_proof(assume_raa_derive_valid))
 
 # duplicate subproofs
 
@@ -62,7 +62,7 @@ dup_ok = \
    (F, contra, 1,5),     # 6
    (Not(Not(a)), raa, 5,6)] # 7
 
-print check_proof(dup_ok)
+print(check_proof(dup_ok))
 
 dup_err = \
   [(Text('Reductio Ad Absurdum (RAA), duplicate subproofs, cite premises in wrong scope'), comment),
@@ -74,7 +74,7 @@ dup_err = \
    (F, contra, 1,2),
    (Not(Not(a)), raa, 2,3)]
 
-print check_proof(dup_err)
+print(check_proof(dup_err))
 
 
 # Without scope check, crashes after raa when try to pop empty assump. stack
@@ -87,7 +87,7 @@ raa_scope_err_1 = \
    (Not(Not(a)), raa, 2,3),
    (Not(a), raa, 1,3)]
 
-print check_proof(raa_scope_err_1)
+print(check_proof(raa_scope_err_1))
 
 assume_raa_invalid = \
   [(Text('Invalid a |- ~~a with subproof too deeply nested'), comment),
@@ -97,7 +97,7 @@ assume_raa_invalid = \
     (Not(Not(a)), raa, 2,3),  # valid
     (Not(Not(a)), raa, 2,3)]  # invalid, now subproof too deeply nested.
 
-print check_proof(assume_raa_invalid)
+print(check_proof(assume_raa_invalid))
 
 assume_raa_derive_invalid = \
   [(Text('Invalid |- ~a using assumption, raa, should fail'), comment),
@@ -106,7 +106,7 @@ assume_raa_derive_invalid = \
     (F, ael, 1),
     (Not(a), raa, 2,3)] # invalid, premise at line 2 is not an assumption 
 
-print check_proof(assume_raa_derive_invalid)
+print(check_proof(assume_raa_derive_invalid))
 
 # This should pass
 
@@ -120,7 +120,7 @@ dup_discharge_ok = \
    (F, contra, 1,5),     # 6
    (Not(Not(a)), raa, 2,3)] # 7  # not adjacent subproof, but valid anyway
 
-print check_proof(dup_discharge_ok)
+print(check_proof(dup_discharge_ok))
 
 # This should fail
 

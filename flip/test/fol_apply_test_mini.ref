@@ -1,0 +1,4 @@
+A-elim from Kaye ex 9.10  (0)  Comment
+Ax.Ev.(v = x)             (1)  Given
+Ev.(v = w)                (2)  A-Elimination (1), with w
+

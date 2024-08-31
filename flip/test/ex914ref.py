@@ -10,4 +10,4 @@ ex914ref = \
     (F, Ee, 2,3,5),
     (Not(E(x, P(x))), raa, 2,6)]
 
-print check_proof(ex914ref)
+print(check_proof(ex914ref))

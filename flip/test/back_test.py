@@ -19,7 +19,7 @@ def simple_back_test():
   pcheckp(New(y),new)        # should succeed
 
 simple_back_test()
-print
+print()
 
 # from kaye_ch9_test import ex916  # NOT! This prints all the proofs!
 
@@ -58,6 +58,6 @@ def xr_back_test():
   state()
 
 xr_back_test()
-print
+print()
 
   

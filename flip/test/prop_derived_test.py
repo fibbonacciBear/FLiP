@@ -19,7 +19,7 @@ ex111 = \
     (Impl(Impl(Not(q),Not(p)),Impl(p,r)), impli, 2,8),
     (Impl(Impl(q,r),Impl(Impl(Not(q),Not(p)),Impl(p,r))), impli, 1,9)]
 
-print check_proof(ex111)
+print(check_proof(ex111))
 
 ex118 = \
   [(Text('Ex. 1.18: p & (q v r) |- (p & q) v (p & r) using Or-elim'), comment),
@@ -34,7 +34,7 @@ ex118 = \
     (Or(And(p,q),And(p,r)), oil, 8),
     (Or(And(p,q),And(p,r)), ore, 3,4,6,7,9)]
 
-print check_proof(ex118)
+print(check_proof(ex118))
 
 ex124 = \
   [(Text('Ex 1.24 p -> q |- ~p v q using Law of Excluded Middle'), comment),
@@ -47,7 +47,7 @@ ex124 = \
     (Or(Not(p),q), oir, 6),
     (Or(Not(p),q), ore, 2,3,5,6,7)]
 
-print check_proof(ex124)
+print(check_proof(ex124))
 
 p20 = \
   [(Text('p. 20 |- p -> (q -> p) using copy'), comment),
@@ -57,7 +57,7 @@ p20 = \
     (Impl(q,p), impli, 2,3),
     (Impl(p,Impl(q,p)), impli, 1,4)]
 
-print check_proof(p20)
+print(check_proof(p20))
 
 
 p20n = \
@@ -67,7 +67,7 @@ p20n = \
     (Impl(q,p), impli, 2,1),
     (Impl(p,Impl(q,p)), impli, 1,3)]
 
-print check_proof(p20n)
+print(check_proof(p20n))
 
 pbc_case = \
   [(Text('|- ~(p & F) using Proof By Contradiction'), comment),
@@ -76,4 +76,4 @@ pbc_case = \
     (F, ael, 2),
     (Not(And(p,F)), pbc, 1,3)]
 
-print check_proof(pbc_case)
+print(check_proof(pbc_case))

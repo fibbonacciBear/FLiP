@@ -12,7 +12,7 @@ shorten_ok = \
   (Path('01'), given), # 2
   (Path('0'), shorten, 1,2)] # 3
 
-print check_proof(shorten_ok)
+print(check_proof(shorten_ok))
 
 lengthen_ok = \
  [(Text('Kaye 3.1, p. 25'), comment), # 0
@@ -24,7 +24,7 @@ lengthen_ok = \
   (Path('0010'), lengthen0, 5), # 6
   (Path('00100'), lengthen0, 6)] # 7
 
-print check_proof(lengthen_ok)
+print(check_proof(lengthen_ok))
   
 # erroneous proofs
 
@@ -34,7 +34,7 @@ premise_oob = \
   (Path('01'), given), # 2
   (Path('0'), shorten, 1,3)] # 3, second premise out-of-bounds
 
-print check_proof(premise_oob)
+print(check_proof(premise_oob))
 
 premise_reversed = \
  [(Text('Shorten, premise indices reversed'), comment), # 0
@@ -42,7 +42,7 @@ premise_reversed = \
   (Path('01'), given), # 2
   (Path('0'), shorten, 2,1)] # 3
 
-print check_proof(premise_reversed)
+print(check_proof(premise_reversed))
 
 shorten_0_err = \
  [(Text("Shorten, first premise doesn't match"), comment), # 0
@@ -50,7 +50,7 @@ shorten_0_err = \
   (Path('01'), given), # 2
   (Path('0'), shorten, 1,2)] # 3
 
-print check_proof(shorten_0_err)
+print(check_proof(shorten_0_err))
 
 shorten_1_err = \
  [(Text("Shorten, second premise doesn't match"), comment), # 0
@@ -58,7 +58,7 @@ shorten_1_err = \
   (Path('11'), given), # 2, formula 11 should be 01
   (Path('0'), shorten, 1,2)] # 3
 
-print check_proof(shorten_1_err)
+print(check_proof(shorten_1_err))
 
 lengthen_err = \
  [(Text("Lengthen, premise doesn't match"), comment), # 0
@@ -70,4 +70,4 @@ lengthen_err = \
   (Path('1010'), lengthen0, 5), # 6
   (Path('10100'), lengthen0, 6)] # 7
 
-print check_proof(lengthen_err)
+print(check_proof(lengthen_err))

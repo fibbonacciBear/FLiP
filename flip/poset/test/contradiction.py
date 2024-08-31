@@ -7,7 +7,7 @@ contra_ok1 = \
   (nlt(a,b), given),
   (F, contra, 1,2)]
 
-print check_proof(contra_ok1)
+print(check_proof(contra_ok1))
 
 contra_ok2 = \
  [(Text("Contradiction rule, reversed premise order, indices also"), comment),
@@ -15,7 +15,7 @@ contra_ok2 = \
   (lt(a,b), given),
   (F, contra, 2,1)]
 
-print check_proof(contra_ok2)
+print(check_proof(contra_ok2))
 
 # reverse premise order, but don't reverse index order 
 
@@ -25,7 +25,7 @@ contra_err0 = \
   (lt(a,b), given),
   (F, contra, 1,2)]
 
-print check_proof(contra_err0)
+print(check_proof(contra_err0))
 
 # Separate test case for each conjunct in rule
 
@@ -35,7 +35,7 @@ contra_err1 = \
   (nlt(a,b), given),
   (F, contra, 1,2)]
 
-print check_proof(contra_err1)
+print(check_proof(contra_err1))
 
 contra_err2 = \
  [(Text("Contradiction, second premise not /<"), comment),
@@ -43,7 +43,7 @@ contra_err2 = \
   (lt(a,b), given),
   (F, contra, 1,2)]
 
-print check_proof(contra_err2)
+print(check_proof(contra_err2))
 
 contra_err3 = \
  [(Text("Contradiction, conclusion not F"), comment),
@@ -51,7 +51,7 @@ contra_err3 = \
   (nlt(a,b), given),
   (lt(c,d), contra, 1,2)]
 
-print check_proof(contra_err3)
+print(check_proof(contra_err3))
 
 contra_err4 = \
  [(Text("Contradiction, left arguments don't match"), comment),
@@ -59,7 +59,7 @@ contra_err4 = \
   (nlt(c,b), given),
   (F, contra, 1,2)]
 
-print check_proof(contra_err4)
+print(check_proof(contra_err4))
 
 contra_err4 = \
  [(Text("Contradiction, right  arguments don't match"), comment),
@@ -67,4 +67,4 @@ contra_err4 = \
   (nlt(a,c), given),
   (F, contra, 1,2)]
 
-print check_proof(contra_err4)
+print(check_proof(contra_err4))

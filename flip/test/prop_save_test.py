@@ -11,7 +11,7 @@ def ex69_import_save_restore():
  clear()
  print('from ex69 import ex69')
  from ex69 import ex69
- print ('check_proof(ex69)')
+ print('check_proof(ex69)')
  check_proof(ex69)
  pstate()
 

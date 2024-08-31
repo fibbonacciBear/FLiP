@@ -4,44 +4,44 @@ from command_wrapper import *
 from ex916ref import ex916 # put defn *without* check in its own file
 
 def backa_test():
-  print '-- check_proof ex. 9.16'
+  print('-- check_proof ex. 9.16')
   check_proof(ex916)
-  print
+  print()
 
-  print '-- backa to delete big subproof that occupies most of proof'
+  print('-- backa to delete big subproof that occupies most of proof')
   pbacka()
   pback()
   pback()
   pbacka()
   pp()
-  print
+  print()
 
-  print '-- New(a) to check whether a is free at this point in proof'
+  print('-- New(a) to check whether a is free at this point in proof')
   pcheckp(New(a),new)
-  print
+  print()
 
-  print '-- start over, check_proof 9.16 again'
+  print('-- start over, check_proof 9.16 again')
   check_proof(ex916)
-  print
+  print()
 
-  print '-- back to delete many lines, end up in most deeply nested part of proof'
+  print('-- back to delete many lines, end up in most deeply nested part of proof')
   pback(12)
   pp()
-  print
+  print()
 
-  print '-- New(a) to check whether a is free at this point in proof'
+  print('-- New(a) to check whether a is free at this point in proof')
   pcheckp(New(a),new)
-  print
+  print()
 
   for i in range(3):
 
-    print '-- backa to pop this subproof'
+    print('-- backa to pop this subproof')
     pbacka()
     pp()
-    print 
+    print() 
 
-    print '-- New(a) to check whether a is free at this point in proof'
+    print('-- New(a) to check whether a is free at this point in proof')
     pcheckp(New(a),new)
-    print
+    print()
 
 backa_test()

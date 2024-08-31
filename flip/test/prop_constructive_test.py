@@ -16,7 +16,7 @@ ex51a = \
    (e, contra_con, 5),
    (e, ore, 1,3,3,4,6)]
 
-print check_proof(ex51a)
+print(check_proof(ex51a))
 
 ex51b = \
   [(Text('Fig. 5.1(b), Classical e v f, ~f |- e'),comment),
@@ -29,7 +29,7 @@ ex51b = \
    (e, contra_classic, 5,6),
    (e, ore, 1,3,3,4,7)]
 
-print check_proof(ex51b)
+print(check_proof(ex51b))
 
 fig510 = \
   [(Text('Fig. 5.10, classical proof of ~(~e & ~f) |- e v f'), comment),
@@ -47,7 +47,7 @@ fig510 = \
     (F, contra, 11,1),
     (Or(e,f), contra_classic, 2,12)]
 
-print check_proof(fig510)
+print(check_proof(fig510))
 
 fig511 = \
   [(Text('Fig. 5.11, classical proof of e v ~e'), comment),
@@ -60,4 +60,4 @@ fig511 = \
     (F, contra, 6,1),
     (Or(e,Not(e)), contra_classic, 1,7)]
 
-print check_proof(fig511)
+print(check_proof(fig511))

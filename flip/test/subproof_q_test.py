@@ -15,7 +15,7 @@ ex912 = \
     (Not(Not(E(x, Not(P(x))))), raa, 2,10),
     (E(x, Not(P(x))), ne, 11)]
 
-print check_proof(ex912)
+print(check_proof(ex912))
 
 ex912_var_used = \
   [(Text('Erroneous A-intro, ex. 9.12, New variable already in use'), comment),
@@ -33,7 +33,7 @@ ex912_var_used = \
     (Not(Not(E(x, Not(P(x))))), raa, 3,11),
     (E(x, Not(P(x))), ne, 12)]
 
-print check_proof(ex912_var_used)
+print(check_proof(ex912_var_used))
 
 ex912_other_var = \
   [(Text('Erroneous A-intro, ex. 9.12, New variable not used in conclusion'), comment),
@@ -50,7 +50,7 @@ ex912_other_var = \
     (Not(Not(E(x, Not(P(x))))), raa, 2,10),
     (E(x, Not(P(x))), ne, 11)]
 
-print check_proof(ex912_other_var)
+print(check_proof(ex912_other_var))
 
 ex912_new_not_used = \
   [(Text('Erroenous A-intro, ex. 9.12, New variable not used in subproof'), comment),
@@ -68,7 +68,7 @@ ex912_new_not_used = \
     (Not(Not(E(x, Not(P(x))))), raa, 3,11),
     (E(x, Not(P(x))), ne, 12)]
 
-print check_proof(ex912_new_not_used)
+print(check_proof(ex912_new_not_used))
 
 ex912_no_new = \
   [(Text('Erroneous A-intro, ex. 9.12, subproof assumption is not New'), comment),
@@ -86,7 +86,7 @@ ex912_no_new = \
     (Not(Not(E(x, Not(P(x))))), raa, 3,11),
     (E(x, Not(P(x))), ne, 12)]
 
-print check_proof(ex912_no_new)
+print(check_proof(ex912_no_new))
 
 ex912_wrong_pred = \
   [(Text('Erroneous A-intro, ex. 9.12, wrong predicate in conclusion'), comment),
@@ -103,7 +103,7 @@ ex912_wrong_pred = \
     (Not(Not(E(x, Not(P(x))))), raa, 2,10),
     (E(x, Not(P(x))), ne, 11)]
 
-print check_proof(ex912_wrong_pred)
+print(check_proof(ex912_wrong_pred))
 
 ex912_wrong_bound = \
   [(Text('Erroneous A-intro, ex. 9.12, wrong bound variable in conclusion after quantifier'), comment),
@@ -120,7 +120,7 @@ ex912_wrong_bound = \
     (Not(Not(E(x, Not(P(x))))), raa, 2,10),
     (E(x, Not(P(x))), ne, 11)]
 
-print check_proof(ex912_wrong_bound)
+print(check_proof(ex912_wrong_bound))
 
 ex912_wrong_body = \
   [(Text('Erroneous A-intro, ex. 9.12, wrong bound variable in conclusion body'), comment),
@@ -137,7 +137,7 @@ ex912_wrong_body = \
     (Not(Not(E(x, Not(P(x))))), raa, 2,10),
     (E(x, Not(P(x))), ne, 11)]
 
-print check_proof(ex912_wrong_body)
+print(check_proof(ex912_wrong_body))
 
 ex914 = \
   [(Text('Valid E-elim, Kaye ex. 9.14, Ax.~P(x) |- ~Ex.P(x)'), comment),
@@ -149,7 +149,7 @@ ex914 = \
     (F, Ee, 2,3,5),
     (Not(E(x, P(x))), raa, 2,6)]
 
-print check_proof(ex914)
+print(check_proof(ex914))
 
 ex914_var_used = \
   [(Text('Erroneous E-elim, ex. 9.14, Let variable already in use'), comment),
@@ -162,13 +162,13 @@ ex914_var_used = \
     (F, Ee, 3,4,6),
     (Not(E(x, P(x))), raa, 3,7)]
 
-print check_proof(ex914_var_used)
+print(check_proof(ex914_var_used))
 
 # Does this even make sense?  No, can only check its appearance in Let itself
 #ex914_let_not_used = \
  # [(Text('Erroenous E-elim, ex. 9.14, Let variable not used in subproof'), comment),
   # ]
-#print check_proof(ex914_let_not_used)
+#print(check_proof(ex914_let_not_used))
 
 # Fails at  requires different proof
 ex914_wrong_pred = \
@@ -181,7 +181,7 @@ ex914_wrong_pred = \
     (F, Ee, 2,3,5),
     (Not(E(x, P(x))), raa, 2,6)]
 
-print check_proof(ex914_wrong_pred)
+print(check_proof(ex914_wrong_pred))
 
 # v1 in P1,{v1:v2} does not match  E(v1,P1) in premise 
 # must add another arg to P to check this
@@ -195,7 +195,7 @@ ex914_wrong_bound = \
     (F, Ee, 2,3,5),
     (Not(E(x, P(x))), raa, 2,6)]
 
-print check_proof(ex914_wrong_bound)
+print(check_proof(ex914_wrong_bound))
 
 # v2 in P1,{v1:v2} does not match  Let(v2,...) in same formula
 ex914_wrong_body = \
@@ -208,7 +208,7 @@ ex914_wrong_body = \
     (F, Ee, 2,3,5),
     (Not(E(x, P(x))), raa, 2,6)]
 
-print check_proof(ex914_wrong_body)
+print(check_proof(ex914_wrong_body))
 
 # Just use assume not let
 ex914_no_let = \
@@ -221,7 +221,7 @@ ex914_no_let = \
     (F, Ee, 2,3,5),
     (Not(E(x, P(x))), raa, 2,6)]
 
-print check_proof(ex914_no_let)
+print(check_proof(ex914_no_let))
 
 ex914_different_concl = \
   [(Text('Erroneous E-elim, ex. 9.14, Rule conclusion is not subproof conclusion'), comment),
@@ -233,7 +233,7 @@ ex914_different_concl = \
     (Not(q), Ee, 2,3,5),
     (Not(E(x, P(x))), raa, 2,6)]
 
-print check_proof(ex914_different_concl)
+print(check_proof(ex914_different_concl))
 
 # To test this requires a different proof, because here concl has no vars
 let_used_concl = \
@@ -245,7 +245,7 @@ let_used_concl = \
     (Q(a),imple,4,3),
     (Q(a),Ee,1,2,5)]
 
-print check_proof(let_used_concl)
+print(check_proof(let_used_concl))
 
 ai_wrongvar = \
   [(Text('Erroneous A-intro, new variable a not used in subproof'), comment),
@@ -254,7 +254,7 @@ ai_wrongvar = \
     (Equal(x,y), aer, 1),
     (A(x, Equal(x,y)), Ai, 2,3)]
 
-print check_proof(ai_wrongvar)
+print(check_proof(ai_wrongvar))
 
 ai_vac = \
   [(Text('Vacuous A-intro, new variable a does not occur in conclusion body'), comment),
@@ -263,4 +263,4 @@ ai_vac = \
     (Equal(x,y), aer, 1),
     (A(a, Equal(x,y)), Ai, 2,3)]
 
-print check_proof(ai_vac)
+print(check_proof(ai_vac))

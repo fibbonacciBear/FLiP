@@ -12,7 +12,7 @@ class Text(Formula):
   def __init__(self, *args):
     check_count(self, 1, *args)
     if not isinstance(args[0], str):
-      raise TypeError, 'argument %s is not a string' % text
+      raise TypeError(f'argument {args[0]} is not a string')
     self.text = args[0]
 
   def pform(self):
@@ -27,11 +27,11 @@ class Text(Formula):
 # Define a symbol for each rule.
 # Rule symbols are self-evaluating, used to write proof in save file format.
  
-(comment, given) = ('comment', 'given')
+(comment, given, goal) = ('comment', 'given', 'goal')
 
 # Pretty-print names for rules.
 
-rule_names = { comment: 'Comment', given : 'Given' }
+rule_names = { comment: 'Comment', given : 'Given', goal : 'Goal'}
 
 # Inference rules, dictionary of rule symbol and list of formulas:
 #  list of premises, then conclusion last
@@ -42,7 +42,8 @@ m1 = FormulaPlaceholder('m1')
 
 rules = { 
            comment: [ m1 ],   # match any formula
-           given:   [ m1 ]
+           given:   [ m1 ],
+           goal:    [ m1 ]
         }
           
 # Import statement to write to save file, so it in turn can be imported 

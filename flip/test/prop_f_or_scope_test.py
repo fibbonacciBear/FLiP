@@ -8,7 +8,7 @@ f_scope_error = \
     (Not(And(T,F)), raa, 1,2),
     (F, ael, 1)]
 
-print check_proof(f_scope_error)
+print(check_proof(f_scope_error))
 
 or_scope_error = \
   [(Text('Erroneous proof of a v b |- b using scope error'), comment),
@@ -21,4 +21,4 @@ or_scope_error = \
     (Not(And(Not(a),Not(b))), raa, 2,6),
     (b, oel, 1,3)]
 
-print check_proof(or_scope_error)
+print(check_proof(or_scope_error))

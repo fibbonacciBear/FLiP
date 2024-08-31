@@ -7,6 +7,7 @@ involving bound and free variables.
 
 from operator import concat      # for free method in Compound
 from copy import copy, deepcopy  # for subst methods
+from functools import reduce
 
 class Symbol(object):
   """
@@ -270,7 +271,7 @@ class Quantifier(Compound, Formula):
         other_errors.append(
           'Fail: apply command requires argument: {term:variable}')
         return False
-      pair = (otherdata[0].items())[0]
+      pair = list((otherdata[0].items()))[0]
       term = pair[0]
       bound = pair[1]
       if not (isinstance(bound,Variable) and isinstance(term,Term)):
@@ -455,7 +456,7 @@ class Subst(Symbol, Formula):
           replacement = replacement_subformula #Ae premise doesn't constrain t1
         # Check side conditions on bound variables
         for descrip, term in (('source',source), ('replacement',replacement)):
-          if filter(lambda v: v in bound, term.free()):
+          if list(filter(lambda v: v in bound, term.free())):
             other_errors.append(
               'Fail: %s term %s includes bound variable in %s' % \
                (descrip, term.pform(), ppflist(bound)))
@@ -486,7 +487,7 @@ class Subst(Symbol, Formula):
       # S1({t1:v1}) in Ei, k is term t1, v is bound variable v1
       elif k not in subformulas and v not in subformulas:
         # otherdata has already been checked in Quantifier generate 
-        k,v = (otherdata[0].items())[0] 
+        k,v = list((otherdata[0].items()))[0] 
         subst_pairs.append((k,v))
       # In following cases, term t1 only is from otherdata
       elif len(otherdata) < 1 or not isinstance(otherdata[0],Term):
@@ -597,8 +598,8 @@ def check_count(self, count, *args):
   # return # uncomment this line to turn off argument count check
   n = len(args)
   if n != count:
-    raise SyntaxError, '%s requires %d arguments, found %d' % \
-      (self.__class__.__name__, count, n)
+    raise SyntaxError('%s requires %d arguments, found %d' % \
+      (self.__class__.__name__, count, n))
 
 def check_type(self, arg_type, *args):
   """
@@ -607,8 +608,8 @@ def check_type(self, arg_type, *args):
   # return # uncomment this line to turn off argument type check
   for i, a in enumerate(args):
     if not(isinstance(a, arg_type)):
-      raise TypeError, '%s argument %d, %s is %s, must be %s' % \
-        (self.__class__.__name__, i, a.ppf(), type(a), arg_type)
+      raise TypeError('%s argument %d, %s is %s, must be %s' % \
+        (self.__class__.__name__, i, a.ppf(), type(a), arg_type))
 
 def remove_dups(vs):
   'Return shallow copy of list with duplicates removed'

@@ -3,6 +3,7 @@ Prelude for interactive proof session with prop logic from Kaye ch 6
 Open session with: python -i prop_session.py
 """
 
+
 # logic modules for prop logic from Kaye ch 6
 
 import prop_common

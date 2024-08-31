@@ -13,4 +13,4 @@ ex69ref = \
     (F, contra, 3,8),
     (Not(Or(Not(a),Not(b))), raa, 4,9)]
 
-print check_proof(ex69ref)
+print(check_proof(ex69ref))

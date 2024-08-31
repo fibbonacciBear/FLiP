@@ -79,5 +79,5 @@ check_proof(raa_err5)
 raa_err6 = \
  [(nlt(c,a), raa)]
 
-print "One-line erroneous proof with no comment line"
+print("One-line erroneous proof with no comment line")
 check_proof(raa_err6)

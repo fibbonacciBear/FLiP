@@ -11,19 +11,18 @@ core = [0,[1,2],[3,4],5] # like constructive or-elimination
 nota = [0,1,2]  # none of the above
 
 
-print '%s --> %s' % (nota, flotten(nota))
-print '%s --> %s' % (assume, flotten(assume))
-print '%s --> %s' % (discharge, flotten(discharge))
-print '%s --> %s' % (assume_case, flotten(assume_case))
-print '%s --> %s' % (core, flotten(core))
+print('%s --> %s' % (nota, flotten(nota)))
+print('%s --> %s' % (assume, flotten(assume)))
+print('%s --> %s' % (discharge, flotten(discharge)))
+print('%s --> %s' % (assume_case, flotten(assume_case)))
+print('%s --> %s' % (core, flotten(core)))
 
 rules = [ nota, assume, discharge, assume_case, core ]
 
 flots = [ flotten(r) for r in rules ]  # each r becomes flat list of tuples
 
-print
-print 'assumer:      %s' % [ assumer(f) for f in flots ]
-print 
-print 'assumer_case: %s' % [ assumer_case(f) for f in flots ]
-print 
-print 'discharger:   %s' % [ discharger(f) for f in flots ]
+print('assumer:      %s' % [ assumer(f) for f in flots ])
+print()
+print('assumer_case: %s' % [ assumer_case(f) for f in flots ])
+print()
+print('discharger:   %s' % [ discharger(f) for f in flots ])
